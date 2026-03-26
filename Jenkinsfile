@@ -17,7 +17,7 @@ pipeline {
             steps {
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
-                    credentialsId: 'aws-iam-user-creds'
+                    credentialsId: 'jenkins_alpha'
                 ]]) {
                     sh 'terraform init'
                 }
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
-                    credentialsId: 'aws-iam-user-creds'
+                    credentialsId: 'jenkins_alpha'
                 ]]) {
                     sh '''
                         terraform plan -out=tfplan
@@ -56,7 +56,7 @@ pipeline {
                     if (destroyChoice == 'yes') {
                         withCredentials([[
                             $class: 'AmazonWebServicesCredentialsBinding',
-                            credentialsId: 'aws-iam-user-creds'
+                            credentialsId: 'jenkins_alpha'
                         ]]) {
                             sh 'terraform destroy -auto-approve'
                         }
