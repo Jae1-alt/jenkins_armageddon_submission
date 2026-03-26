@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Jae1-alt/jenkins_armageddon_submission'
+                git branch: 'master', url: 'https://github.com/Jae1-alt/jenkins_armageddon_submission'
             }
         }
 
