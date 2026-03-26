@@ -8,7 +8,7 @@ variable "s3-objects" {
   description = "The different objects to upload to the bucket."
 
   default = {
-    "sample_image" = {
+    "sample_image_1" = {
       key          = "sample_image.png"
       source       = "./images/sample_image.png"
       content_type = "image/png"
