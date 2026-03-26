@@ -3,7 +3,7 @@ output "s3_bucket_arn" {
   value       = aws_s3_bucket.website.arn
 }
 
-output "cloudfront_url" {
-  description = "The URL for the newly created CloudFront Distribution."
-  value       = "https://${aws_cloudfront_distribution.website.domain_name}"
+output "s3_bucket_url" {
+  description = "The URL for the newly created S3 Bucket."
+  value       = "https://${aws_s3_bucket.website.bucket_domain_name}"
 }
