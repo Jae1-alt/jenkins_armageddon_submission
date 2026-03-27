@@ -13,6 +13,11 @@ variable "s3-objects" {
       source       = "./images/sample_image.png"
       content_type = "image/png"
     }
+    "armageddon_confirmation" = {
+      key          = "sample_image.png"
+      source       = "./images/armageddon_pass_confirm.png"
+      content_type = "image/png"
+    }
 
   }
 }
