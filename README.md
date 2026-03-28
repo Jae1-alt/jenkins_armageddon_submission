@@ -9,3 +9,4 @@ It contains:
 - text file/markdown/picture: Armageddon repo link
 - all text/image files uploaded in s3 bucket
 
+The [0.More_information](./0.More_information) file contains, the [Armageddon_repo](./0.More_information/Armageddon_repo.md) and the [creating_custom_jenkins_image](./0.More_information/creating_custom_jenkins_image.md) files
