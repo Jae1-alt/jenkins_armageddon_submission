@@ -28,5 +28,10 @@ variable "s3-objects" {
       source       = "./images/webhook_payload_delivered.png"
       content_type = "image/png"
     }
+    "webhook_payload_delivery" = {
+      key          = "images/2nd_successful_jenkins_webhook_deployment.png"
+      source       = "./images/2nd_successful_jenkins_webhook_deployment.png"
+      content_type = "image/png"
+    }
   }
 }
