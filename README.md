@@ -2,7 +2,7 @@
 ---
 This simple excersise that illustrated the possible integration between Jenkins and GitHub using a webhook.
 
-It contains:
+The [images](./images/) folder contains images with proof of:
 - screenshot: working webhook trigger (empty or otherwise)
 - screenshot: successful TF deployment via jenkins
 - screenshot: theo's approval of Armageddon submission
