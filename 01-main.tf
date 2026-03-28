@@ -31,8 +31,6 @@ resource "aws_s3_object" "index" {
 resource "aws_s3_bucket_policy" "public_access" {
   bucket = aws_s3_bucket.website.id
 
-  depends_on = [aws_s3_bucket_public_access_block.public_access]
-
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
