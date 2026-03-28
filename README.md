@@ -9,4 +9,15 @@ The [images](./images/) folder contains images with proof of:
 - text file/markdown/picture: Armageddon repo link
 - all text/image files uploaded in s3 bucket
 
-The [0.More_information](./0.More_information) file contains, the [Armageddon_repo](./0.More_information/Armageddon_repo.md) and the [creating_custom_jenkins_image](./0.More_information/creating_custom_jenkins_image.md) files
+The [0.More_information](./0.More_information) file contains, the [Armageddon_repo](./0.More_information/Armageddon_repo.md) and the [creating_custom_jenkins_image](./0.More_information/creating_custom_jenkins_image.md) files.
+
+### Image proof
+
+- screenshot: working webhook trigger (empty or otherwise) & successful TF deployment via jenkins
+
+![2nd_successful_jenkins_webhook_deployment.png](./images/2nd_successful_jenkins_webhook_deployment.png)
+
+
+- screenshot: theo's approval of Armageddon submission
+
+![](images/armageddon_pass_confirm.png)
