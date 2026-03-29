@@ -16,6 +16,13 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
   restrict_public_buckets = false
 }
 
+resource "aws_s3_account_public_access_block" "account_level" {
+  block_public_acls       = true
+  ignore_public_acls      = true
+  block_public_policy     = false # Unblocks policies globally
+  restrict_public_buckets = false # Allows public buckets globally
+}
+
 resource "aws_s3_object" "index" {
   for_each = var.s3-objects
 
@@ -31,6 +38,7 @@ resource "aws_s3_bucket_policy" "public_access" {
   bucket = aws_s3_bucket.website.id
 
   depends_on = [
+    aws_s3_account_public_access_block.account_level,
     aws_s3_bucket_public_access_block.public_access
   ]
 
