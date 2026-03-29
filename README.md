@@ -1,4 +1,4 @@
-## Jenkins - Github via GitHub Webhook
+## Jenkins - Github via GitHub Webhook.
 ---
 This simple excersise that illustrated the possible integration between Jenkins and GitHub using a webhook.
 
