@@ -25,6 +25,10 @@ The [0.More_information](./0.More_information) file contains the [Armageddon rep
 - WebHook Settings:
 ![webhook_settings.png](./images/webhook_settings.png)
 
+
+- Images in bucket:
+![images_in_bucket.png](./images/images_in_bucket.png)
+
 ---
 ---
 
