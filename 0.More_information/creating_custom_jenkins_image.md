@@ -32,7 +32,7 @@ RUN curl -LO "https://releases.hashicorp.com/terraform/1.14.7/terraform_1.14.7_l
 USER jenkins
 ```
 
-Plugins.txt code:
+List of Jenkins plugins to will called upon by the `jenkins-plugin-cli` command:
 ```
 # AWS
 aws-credentials
