@@ -12,15 +12,8 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
 
   block_public_acls       = true
   ignore_public_acls      = true
-  block_public_policy     = false
-  restrict_public_buckets = false
-}
-
-resource "aws_s3_account_public_access_block" "account_level" {
-  block_public_acls       = true
-  ignore_public_acls      = true
-  block_public_policy     = false # Unblocks policies globally
-  restrict_public_buckets = false # Allows public buckets globally
+  block_public_policy     = true
+  restrict_public_buckets = true
 }
 
 resource "aws_s3_object" "index" {
