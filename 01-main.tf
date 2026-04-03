@@ -31,7 +31,6 @@ resource "aws_s3_bucket_policy" "public_access" {
   bucket = aws_s3_bucket.website.id
 
   depends_on = [
-    aws_s3_account_public_access_block.account_level,
     aws_s3_bucket_public_access_block.public_access
   ]
 
