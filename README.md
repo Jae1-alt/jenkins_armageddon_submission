@@ -43,4 +43,4 @@ The [0.More_information](./0.More_information) file contains the [Armageddon rep
 
 ---
 
-Tiny tester 1
+Tiny tester
