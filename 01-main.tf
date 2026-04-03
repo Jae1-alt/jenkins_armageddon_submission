@@ -10,10 +10,10 @@ resource "aws_s3_bucket" "website" {
 resource "aws_s3_bucket_public_access_block" "public_access" {
   bucket = aws_s3_bucket.website.id
 
-  block_public_acls       = true
-  ignore_public_acls      = true
-  block_public_policy     = true
-  restrict_public_buckets = true
+  block_public_acls       = false
+  ignore_public_acls      = false
+  block_public_policy     = false
+  restrict_public_buckets = false
 }
 
 resource "aws_s3_object" "index" {
@@ -29,10 +29,6 @@ resource "aws_s3_object" "index" {
 
 resource "aws_s3_bucket_policy" "public_access" {
   bucket = aws_s3_bucket.website.id
-
-  depends_on = [
-    aws_s3_bucket_public_access_block.public_access
-  ]
 
   policy = jsonencode({
     Version = "2012-10-17"
