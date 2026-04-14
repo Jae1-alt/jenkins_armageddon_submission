@@ -4,12 +4,27 @@ pipeline {
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
         TF_IN_AUTOMATION   = 'true'
+        SNYK_ORG           = credentials('snyk-org-slug')
     }
 
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
+            }
+        }
+
+
+        
+        stage('Snyk IaC Scan Monitor') {
+            steps {
+                snykSecurity(
+                    snykInstallation: 'snyk',
+                    snykTokenId: 'snyk-api-token',
+                    additionalArguments: '--iac --report --org=$SNYK_ORG --severity-threshold=high',
+                    failOnIssues: true,
+                    monitorProjectOnBuild: false
+                )
             }
         }
 
@@ -24,16 +39,13 @@ pipeline {
             }
         }
 
-        stage('Terraform Apply') {
+        stage('Terraform Plan') {
             steps {
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
                     credentialsId: 'jenkins_alpha'
                 ]]) {
-                    sh '''
-                        terraform plan -out=tfplan
-                        terraform apply -auto-approve tfplan
-                    '''
+                    sh 'terraform plan'
                 }
             }
         }
